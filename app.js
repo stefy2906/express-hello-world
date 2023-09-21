@@ -11,11 +11,11 @@ app.get('/req', (req, res) => {
     console.log("Just got a request!")
     res.send('Yo!')
 })
-app.get("/meunome", (req, res) => res.type('html').send(html));
+app.get("/meuNome", (req, res) => res.type('html').send(html));
 
 app.get('/req', (req, res) => {
-    console.log("Meu nome é stefany")
-    res.send('Yo!')
+    const meuNome("Stefany Breve dos Santos")
+    res.send('Meu nome é${meuNome}')
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
