@@ -7,16 +7,14 @@ app.use(express.urlencoded({extended: true}));
 
 app.get("/", (req, res) => res.type('html').send(html));
 
-app.get('/req', (req, res) => {
-    console.log("Just got a request!")
-    res.send('Yo!')
-})
 app.get('/meuNome', (req, res) => {
     res.send('Meu nome é Stefany Breve dos Santos')
 })
+
 app.get('/Tico', (req, res) => {
     res.send('Teco')
 })
+
 app.get('/pokemons', async (req, res) => {
   try {
     const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=10');
@@ -24,9 +22,20 @@ app.get('/pokemons', async (req, res) => {
     res.json(pokemons);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Erro ao buscar pokemons' });
+    res.status(500).json({ error: 'Erro ao buscar pokémons' });
   }
 });
+
+// Novo endpoint POST para listar as séries favoritas
+app.post('/series', (req, res) => {
+  const seriesFavoritas = [
+    { nome: "The Umbrella Academy", genero: "Ação"},
+    { nome: "Bridgerton", genero: "Romance"},
+    { nome: "Anne with an E", genero: "Obra de Época" }
+  ];
+  res.json(seriesFavoritas);
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
