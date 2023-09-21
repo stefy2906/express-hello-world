@@ -17,15 +17,21 @@ app.get('/Tico', (req, res) => {
 
 app.get('/pokemons', (req, res) => {
   const Pokemons = [
-    { nome: "The Umbrella Academy", genero: "Ação"},
-    { nome: "Bridgerton", genero: "Romance"},
-    { nome: "Anne with an E", genero: "Obra de Época" }
+    { nome: "Pikachu"},
+    { nome: "Butterfree"},
+    { nome: "Pidgeot"},
+    { nome: "Bulbasaur"},
+    { nome: "Charizard"},
+    { nome: "Squirtle"},
+    { nome: "Kingler"},
+    { nome: "Primeape"},
+    { nome: "Muk"},
+    { nome: "Tauros"}
   ];
   res.json(Pokemons);
 });
 
-// Novo endpoint POST para listar as séries favoritas
-app.post('/series', (req, res) => {
+app.get('/series', (req, res) => {
   const seriesFavoritas = [
     { nome: "The Umbrella Academy", genero: "Ação"},
     { nome: "Bridgerton", genero: "Romance"},
