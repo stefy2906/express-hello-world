@@ -20,7 +20,7 @@ app.get('/Tico', (req, res) => {
 app.get('/pokemons', async (req, res) => {
   try {
     const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=10');
-    const pokemons = response.data.results.map(pokemon => pokemon.name);
+    const pokemons = response.data.results.map(pokemon => pokemon.name); 
     res.json(pokemons);
   } catch (error) {
     console.error(error);
