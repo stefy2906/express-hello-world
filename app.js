@@ -15,14 +15,13 @@ app.get('/Tico', (req, res) => {
     res.send('Teco')
 })
 
-// Novo endpoint POST para listar as séries favoritas
 app.get('/pokemons', (req, res) => {
-  const seriesFavoritas = [
+  const Pokemons = [
     { nome: "The Umbrella Academy", genero: "Ação"},
     { nome: "Bridgerton", genero: "Romance"},
     { nome: "Anne with an E", genero: "Obra de Época" }
   ];
-  res.json(seriesFavoritas);
+  res.json(Pokemons);
 });
 
 // Novo endpoint POST para listar as séries favoritas
