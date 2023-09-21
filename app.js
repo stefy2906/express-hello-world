@@ -11,6 +11,12 @@ app.get('/req', (req, res) => {
     console.log("Just got a request!")
     res.send('Yo!')
 })
+app.get("/meunome", (req, res) => res.type('html').send(html));
+
+app.get('/req', (req, res) => {
+    console.log("Meu nome é stefany")
+    res.send('Yo!')
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
@@ -19,7 +25,7 @@ const html = `
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello from Render!</title>
+    <title>Deploy Backend</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
       <link rel="stylesheet" href="/style.css">
     <script>
