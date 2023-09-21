@@ -11,9 +11,7 @@ app.get('/req', (req, res) => {
     console.log("Just got a request!")
     res.send('Yo!')
 })
-app.get("/meuNome", (req, res) => res.type('html').send(html));
-
-app.get('/req', (req, res) => {
+app.get('/meuNome', (req, res) => {
     const meuNome("Stefany Breve dos Santos")
     res.send('Meu nome é${meuNome}')
 })
