@@ -21,6 +21,7 @@ const html = `
   <head>
     <title>Hello from Render!</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+      <link rel="stylesheet" href="/style.css">
     <script>
       setTimeout(() => {
         confetti({
