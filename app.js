@@ -17,7 +17,7 @@ app.get('/meuNome', (req, res) => {
 app.get('/Tico', (req, res) => {
     res.send('Teco')
 })
-app.get('/pokemons', async (req, res) => {
+app.get('/Pokemons', async (req, res) => {
   try {
     const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=10');
     const pokemons = response.data.results.map(pokemon => pokemon.name); 
