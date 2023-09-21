@@ -17,10 +17,16 @@ app.get('/meuNome', (req, res) => {
 app.get('/Tico', (req, res) => {
     res.send('Teco')
 })
-app.get('/pokemons', (req, res) => {
-    res.send('Pikachu ,'Butterfree','Pidgeot','Bulbasaur','Charizard','Squirtle','Kingler','Primeape','Muk','Tauros','Lapras'')
-})
-
+app.get('/pokemons', async (req, res) => {
+  try {
+    const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=10');
+    const pokemons = response.data.results.map(pokemon => pokemon.name);
+    res.json(pokemons);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erro ao buscar pokemons' });
+  }
+});
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
