@@ -14,8 +14,11 @@ app.get('/req', (req, res) => {
 app.get('/meuNome', (req, res) => {
     res.send('Meu nome é Stefany Breve dos Santos')
 })
-app.get('/tico', (req, res) => {
+app.get('/Tico', (req, res) => {
     res.send('Teco')
+})
+app.get('/pokemons', (req, res) => {
+    res.send('Pikachu', 'Butterfree','Pidgeot','Bulbasaur','Charizard','Squirtle','Kingler','Primeape','Muk','Tauros','Lapras')
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
